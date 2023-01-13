@@ -4,3 +4,7 @@
 {% else %} 
 <link rel="canonical" href="{{ canonical_url }}" /> 
 {% endif %}
+
+//Show unless product tag page
+{% unless template contains 'collection' and current_tags %}
+{% endunless %}
