@@ -1,0 +1,6 @@
+//Canonicalise product tag pages to main collections page
+{% if template contains 'collection' and current_tags %} 
+<link rel="canonical" href="{{ shop.url }}{{ collection.url }}" /> 
+{% else %} 
+<link rel="canonical" href="{{ canonical_url }}" /> 
+{% endif %}
