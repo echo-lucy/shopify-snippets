@@ -1,0 +1,5 @@
+{% if canonical_url == "https://edensgate.co.uk/search?q=" %}
+   <link rel="canonical" href="{{ shop.url | append:"/pages/search-results" }}">
+{% else %}
+  <link rel="canonical" href="{{ canonical_url }}">
+{% endif %}
