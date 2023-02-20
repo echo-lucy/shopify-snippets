@@ -8,3 +8,10 @@
 //Show unless product tag page
 {% unless template contains 'collection' and current_tags %}
 {% endunless %}
+
+
+//If collection handle matches
+{% if collection.handle == "cbd-flowers-uk" %}
+<p>Shop CBD flowers on our sister site buds king</p>
+<a href="https://www.budsking.com/collections/cbd-flowers-uk" rel="nofollow noopener" class="btn" target="_blank" style="border-radius:30px;">View all on BudsKing</a>
+{% endif %}
