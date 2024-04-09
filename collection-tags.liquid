@@ -11,3 +11,43 @@
           {%- endif -%}
         </div>
       {% endif %}
+
+
+
+
+{% if current_tags %}
+  {% assign tag_handled = false %}
+  {% for tag in current_tags %}
+    {% if tag_handled == false %}
+      {% case tag %}
+        {% when 'tag1' %}
+          <div class="tag-description">Description for Tag 1</div>
+          {% assign tag_handled = true %}
+
+        {% when 'tag2' %}
+          <div class="tag-description">Description for Tag 2</div>
+          {% assign tag_handled = true %}
+
+        {% when 'tag3' %}
+          <div class="tag-description">Description for Tag 3</div>
+          {% assign tag_handled = true %}
+
+        {# ...add more when clauses for each of your tags up to 'tag20'... #}
+
+        {% when 'tag20' %}
+          <div class="tag-description">Description for Tag 20</div>
+          {% assign tag_handled = true %}
+      {% endcase %}
+    {% endif %}
+  {% endfor %}
+
+  {% if tag_handled == false %}
+    <!-- Fallback content if none of the tags match -->
+    <div class="tag-description">Default Collection Description</div>
+  {% endif %}
+{% else %}
+  <!-- If there are no current tags, show the collection's default description -->
+  <div class="collection-description">
+    {{ collection.description }}
+  </div>
+{% endif %}
