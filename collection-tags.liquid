@@ -1,0 +1,13 @@
+      {% if current_tags contains 'herbicides' %}
+        <!-- If the 'herbicides' tag is being used to filter the collection, show tag-specific content -->
+        <div class="container header-collection-description">Description for Herbicides Tag Here</div>
+      {% else %}
+        <!-- If not filtering by the 'herbicides' tag, show the general collection description -->
+        <div class="container header-collection-description">
+          {{ collection.description }}
+
+          {%- if collection.handle == 'lawn-fertilizers' -%}
+            <span class="calc-program--trigger desktop-hidden">{{ settings.calc_btn_label }}</span>
+          {%- endif -%}
+        </div>
+      {% endif %}
